@@ -10,6 +10,7 @@ The process is described here: https://brunocassol.com/blog/2023-02-08-How-I-blo
 
 Not really much, but some extras I'd like to incorporate into `joplin_to_github.js`:
 
+- Improve `<title>` in each page.
 - Link images so mobile devices can expand them.
 - Improve looks and User Experience by improving styles.
 - Insert disqus comments code in blog posts.
