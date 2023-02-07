@@ -35,6 +35,7 @@ fs.moveSync('./_resources', './docs/_resources', { overwrite: true });
 fs.copySync('./joplin_export/pluginAssets', './docs/pluginAssets');
 fs.writeFileSync('./docs/.gitkeep', `# Please don't delete this file. It keeps this directory in git even if there are no files`);
 fs.writeFileSync('./docs/CNAME', `brunocassol.com`);
+fs.writeFileSync('./docs/.nojekyll', `We need this file otherwise GitHub Pages will ignore our /docs/_resources directory. See https://github.com/mpetrovich/stylemark/issues/65`);
 
 const pages = [];
 files.forEach(file => {
