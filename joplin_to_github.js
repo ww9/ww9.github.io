@@ -28,12 +28,12 @@ console.log(files);
 const epochMilliseconds = new Date().getTime();
 //fs.copySync('./joplin_export', `./backups/${epochMilliseconds}_joplin_export`);
 
-// re-create ./public directory so we can work on a blank slate
-fs.rmSync('./public', { recursive: true, force: true });
-fs.mkdirSync('./public');
-fs.moveSync('./_resources', './public/_resources', { overwrite: true });
-fs.copySync('./joplin_export/pluginAssets', './public/pluginAssets');
-fs.writeFileSync('./public/.gitkeep', `# Please don't delete this file. It keeps this directory in git even if there are no files`);
+// re-create ./docs directory so we can work on a blank slate
+fs.rmSync('./docs', { recursive: true, force: true });
+fs.mkdirSync('./docs');
+fs.moveSync('./_resources', './docs/_resources', { overwrite: true });
+fs.copySync('./joplin_export/pluginAssets', './docs/pluginAssets');
+fs.writeFileSync('./docs/.gitkeep', `# Please don't delete this file. It keeps this directory in git even if there are no files`);
 
 const pages = [];
 files.forEach(file => {
@@ -72,7 +72,7 @@ const blogListHTML = pages
 	})
 	.join('\n<br>\n');
 
-// Process each page and save it to ./public
+// Process each page and save it to ./docs
 pages.forEach(page => {
 	// Insert blog post list
 	if (page.fileName === 'index.html' || page.fileName === 'blog.html') {
@@ -86,7 +86,7 @@ pages.forEach(page => {
 	const navLinks = '<nav><a href="/">Home</a> | <a href="/blog.html">Blog</a></nav>';
 	page.content = page.content.replace(/<div id="rendered-md">/g, '<div id="rendered-md">' + navLinks);
 
-	fs.outputFile(`./public/${page.filePath}`, page.content);
+	fs.outputFile(`./docs/${page.filePath}`, page.content);
 });
 
 // Clean joplin_export directory. Delete all files except .gitignore
@@ -99,6 +99,6 @@ pages.forEach(page => { delete page.content; delete page.$; }); console.log(page
 // Serve content and open browser to preview result
 const express = require('express');
 const server = express();
-server.use(express.static('public', { index: 'index.html', redirect: false }));
+server.use(express.static('docs', { index: 'index.html', redirect: false }));
 server.listen(3000, () => { console.log('Listening on http://localhost:3000') });
 open('http://localhost:3000', { wait: true });
