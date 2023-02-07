@@ -1,0 +1,7 @@
+We need this file otherwise GitHub Pages will ignore our /docs/_resources directory.
+
+More info:
+
+- https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
+
+- https://github.com/mpetrovich/stylemark/issues/65
