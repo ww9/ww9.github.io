@@ -19,3 +19,10 @@ self.addEventListener('install', (e) => {
 	  caches.match(e.request).then((response) => response || fetch(e.request)),
 	);
  });
+ 
+ let deferredPrompt;
+
+ window.addEventListener('beforeinstallprompt', (e) => {
+	  deferredPrompt = e;
+	  console.log('beforeinstallprompt', e);
+ });
