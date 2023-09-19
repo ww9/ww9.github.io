@@ -7,8 +7,15 @@
 						<script>
 							// Registering Service Worker
 							if ('serviceWorker' in navigator) {
-							navigator.serviceWorker.register('/sw.js');
+								navigator.serviceWorker.register('/sw.js');
 							}
+ 
+							let deferredPrompt;
+
+							window.addEventListener('beforeinstallprompt', (e) => {
+								deferredPrompt = e;
+								console.log('beforeinstallprompt', e);
+							});
 						</script>
 					</head>
 					<body>
