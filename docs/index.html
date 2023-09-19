@@ -3,6 +3,13 @@
 						<meta name="viewport" content="width=device-width, initial-scale=1">
 						<link rel="stylesheet" href="/pluginAssets/katex/katex.css"><script type="application/javascript" src="/pluginAssets/mermaid/mermaid.min.js"></script><script type="application/javascript" src="/pluginAssets/mermaid/mermaid_render.js"></script><link rel="stylesheet" href="/pluginAssets/highlight.js/atom-one-light.css">
 						<title>index</title>
+						<link rel="manifest" href="pwa.webmanifest">
+						<script>
+							// Registering Service Worker
+							if ('serviceWorker' in navigator) {
+							navigator.serviceWorker.register('/sw.js');
+							}
+						</script>
 					</head>
 					<body>
 						<div class="exported-note">
