@@ -1,25 +1,21 @@
-// Installing Service Worker
 self.addEventListener('install', (e) => {
-  console.log('[Service Worker] Install', e);
-});
-
-// // Fetching content using Service Worker
-// self.addEventListener('fetch', (e) => {
-//     // Cache http and https only, skip unsupported chrome-extension:// and file://...
-//     if (!(
-//        e.request.url.startsWith('http:') || e.request.url.startsWith('https:')
-//     )) {
-//         return; 
-//     }
-
-//   e.respondWith((async () => {
-//     const r = await caches.match(e.request);
-//     console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
-//     if (r) return r;
-//     const response = await fetch(e.request);
-//     const cache = await caches.open(cacheName);
-//     console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
-//     cache.put(e.request, response.clone());
-//     return response;
-//   })());
-// });
+	e.waitUntil(
+	  caches.open('cached_blog_files').then((cache) => cache.addAll([
+		 '/',
+		 '/index.html',
+		 '/_resources/037cd31e4bdc4caa83bb371d9e17f93e.png',
+		 '/_resources/226a5b291f6b4787a37e97fd8579b9ed.png',
+		 '/_resources/696c4e9fc58a4c70886fe594bab8ba1e.png',
+		 '/_resources/edf970db09aa4d27b988322de422417a.png',
+		 '/blog/2023-02-07-Debugging-slow-MySQL-and-MariaDB-querie.html',
+		 '/blog/2023-02-08-How-I-blog-using-joplins-EXPORT-HTML-Di.html',
+	  ])),
+	);
+ });
+ 
+ self.addEventListener('fetch', (e) => {
+	console.log(e.request.url);
+	e.respondWith(
+	  caches.match(e.request).then((response) => response || fetch(e.request)),
+	);
+ });
