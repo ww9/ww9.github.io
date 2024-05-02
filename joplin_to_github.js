@@ -117,9 +117,9 @@ pages.forEach(page => {
 });
 
 // Clean export directory. Delete all files except .gitignore
-// fs.rmSync(exportDirectory, { recursive: true, force: true });
-// fs.rmSync('./_resources', { recursive: true, force: true });
-// createJoplinExportDirectory();
+fs.rmSync(exportDirectory, { recursive: true, force: true });
+fs.rmSync('./_resources', { recursive: true, force: true });
+createJoplinExportDirectory();
 
 // Print pages without content to debug
 pages.forEach(page => { delete page.content; delete page.$; }); console.log(pages);
