@@ -2,7 +2,7 @@
 						<meta charset="UTF-8">
 						<meta name="viewport" content="width=device-width, initial-scale=1">
 						<link rel="stylesheet" href="/pluginAssets/katex/katex.css"><script type="application/javascript" src="/pluginAssets/mermaid/mermaid.min.js"></script><script type="application/javascript" src="/pluginAssets/mermaid/mermaid_render.js"></script><link rel="stylesheet" href="/pluginAssets/highlight.js/atom-one-light.css">
-						<title>2023-02-08-How-I-blog-using-joplins-EXPORT-HTML-Directory-plus-GitHub-Pages</title>
+						<title>How I blog using Joplin's "EXPORT HTML Directory" plus GitHub Pages - brunocassol.com</title>
 					</head>
 					<body>
 						<div class="exported-note">
@@ -148,7 +148,7 @@
      * instead of the svg width, height property you must use a viewbox here, 0 0 1536 1792 is typically the actual size of the icon
      * each line begins with the pre-amble -webkit-mask: url("data:image/svg+xml;utf8,
      * and of course finishes with ");
-     * to precvent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
+     * to prevent artifacts it is also necessary to include -webkit-mask-repeat: no-repeat;
      * on the following line
      * */
 		.fa-joplin {
@@ -350,7 +350,12 @@
 		}
 
 		.media-player.media-pdf {
-			min-height: 100vh;
+			min-height: 35rem;
+			width: 100%;
+			max-width: 1000px;
+			margin: 0;
+			border: 0;
+			display: block;
 		}
 
 		/* Clear the CODE style if the element is within a joplin-editable block */
@@ -436,7 +441,20 @@
 				.joplin-checklist li:not(.checked)::before {
 					content:"\f0c8";
 				}
-.mermaid { background-color: white; width: 640px; }</style><div id="rendered-md"><nav><a href="/">Home</a> | <a href="/blog.html">Blog</a></nav><h1 id="how-i-blog-using-joplins-export-html-directory-plus-github-pages">How I blog using Joplin's "EXPORT HTML Directory" plus GitHub Pages</h1>
+.mermaid { width: 640px; }
+.mermaid-export-graph {
+					opacity: 0;
+					height: 0;
+					z-index: 1;
+					position: relative;
+				} 
+				.joplin-editable:hover .mermaid-export-graph,
+				.joplin-editable .mermaid-export-graph:has(:focus-visible) {
+					opacity: 1;
+				}
+				.mermaid-export-graph > button:hover {
+					background-color: #CBDAF1 !important;
+				}</style><div id="rendered-md"><nav><a href="/">Home</a> | <a href="/blog.html">Blog</a></nav><h1 id="how-i-blog-using-joplins-export-html-directory-plus-github-pages">How I blog using Joplin's "EXPORT HTML Directory" plus GitHub Pages</h1>
 <p><em>posted on 2023-02-08</em></p>
 <p>Joplin is a simple open source markdown note-taking app. I write pages as notes than export an entire notebook to HTML by using Joplin's "Export to HTML Directory" feature:</p>
 <p><img src="/_resources/037cd31e4bdc4caa83bb371d9e17f93e.png" alt="09ba8fe843506ba059e95ebcf87408d2.png"></p>
