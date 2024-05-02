@@ -100,7 +100,7 @@ pages.forEach(page => {
 
 	// Append " - brunocassol.com" to page HTML <title> of all pages except home
 	if (page.filePath !== 'index.html') {
-		page.$('title').text(page.$('title').text() + ' - brunocassol.com');
+		page.$('title').text(page.$('title').text() + ' - Bruno Cassol');
 	}
 
 	let htmlContent = page.$.html();
