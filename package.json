@@ -1,0 +1,31 @@
+{
+  "name": "bruno-blog",
+  "version": "1.0.0",
+  "description": "Bruno's personal blog",
+  "main": "dist/index.html",
+  "type": "module",
+  "scripts": {
+    "build": "bun run build.ts",
+    "serve": "bun run serve.ts",
+    "preview": "bun run build && bun run serve",
+    "watch": "bun --watch serve.ts"
+  },
+  "keywords": [
+    "blog",
+    "markdown",
+    "static-site",
+    "bun"
+  ],
+  "author": "Bruno",
+  "license": "MIT",
+  "dependencies": {
+    "highlight.js": "^11.9.0",
+    "marked": "^9.1.5",
+    "marked-highlight": "^2.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "typescript": "^5.2.2",
+    "bun-types": "^1.0.14"
+  }
+}

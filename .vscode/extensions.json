@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-typescript-next",
+    "oven.bun-vscode",
+    "github.vscode-github-actions",
+    "yzhang.markdown-all-in-one",
+    "eamodio.gitlens",
+    "christian-kohler.path-intellisense"
+  ]
+}

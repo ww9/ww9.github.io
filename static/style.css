@@ -1,0 +1,311 @@
+/* Base styles */
+:root {
+	--bg-color: #0b0c0e;
+	--page-color: #111;
+	--text-color: #c9d1d9;
+	--heading-color: #f0f6fc;
+	--link-color: #58a6ff;
+	--border-color: #000;
+	--code-bg: #161b22;
+	--accent-color: #238636;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+	line-height: 1.6;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+/* Layout */
+header {
+	border-bottom: 1px solid var(--border-color);
+}
+
+header,
+footer {
+	background-color: var(--page-color);
+	padding: 1.5rem;
+	width: 100%;
+}
+
+footer {
+	border-top: 1px solid var(--border-color);
+	margin-top: 2rem;
+}
+
+.header-content,
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 960px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+
+	.header-content,
+	.footer-content {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.contacts {
+		margin-top: 1rem;
+	}
+}
+
+main {
+	max-width: 960px;
+	margin: 2rem auto;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--heading-color);
+	line-height: 1.3;
+	margin: 1.5rem 0 1rem;
+}
+
+h1 {
+	font-size: 2.2rem;
+}
+
+h2 {
+	font-size: 1.8rem;
+	margin-top: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+a {
+	color: var(--link-color);
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+p {
+	margin: 1rem 0;
+}
+
+/* Branding */
+.branding h1 {
+	font-size: 1.5rem;
+	margin: 0;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.branding p {
+	font-size: 1rem;
+	margin: 0.25rem 0 0;
+	opacity: 0.8;
+}
+
+/* Contacts */
+.contacts {
+	font-size: 0.9rem;
+}
+
+.contacts a {
+	margin: 0 0.5rem;
+}
+
+.contacts a:first-child {
+	margin-left: 0;
+}
+
+.contacts a:last-child {
+	margin-right: 0;
+}
+
+/* Posts */
+.post {
+	margin-bottom: 4rem;
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	padding: 0 1em;
+	background-color: var(--page-color);
+}
+
+.post:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.date {
+	font-size: 0.9rem;
+	opacity: 0.8;
+	margin: 0.5rem 0;
+}
+
+.content {
+	margin-top: 1.5rem;
+}
+
+/* Code blocks */
+pre {
+	background-color: var(--code-bg);
+	border-radius: 6px;
+	overflow-x: auto;
+	margin: 1.5rem 0;
+	border: 1px solid var(--border-color);
+}
+
+code {
+	font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	font-size: 0.9em;
+}
+
+:not(pre)>code {
+	background-color: var(--code-bg);
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+}
+
+/* Images */
+figure {
+	margin: 1.5rem 0;
+	text-align: center;
+}
+
+figure img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	border: 1px solid #000;
+}
+
+figure figcaption {
+	font-size: 0.9rem;
+	color: var(--text-color);
+	opacity: 0.8;
+}
+
+/* Blockquotes */
+blockquote {
+	border-left: 4px solid var(--accent-color);
+	padding-left: 1rem;
+	margin: 1.5rem 0;
+	color: var(--text-color);
+	opacity: 0.9;
+}
+
+/* Lists */
+ul,
+ol {
+	margin: 1rem 0 1rem 1rem;
+}
+
+/* Tables */
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 1.5rem 0;
+}
+
+table,
+th,
+td {
+	border: 1px solid var(--border-color);
+}
+
+th,
+td {
+	padding: 0.5rem;
+	text-align: left;
+}
+
+th {
+	background-color: var(--code-bg);
+}
+
+/* 404 Page */
+.error-page {
+	text-align: center;
+	padding: 3rem 0;
+}
+
+.error-page h1 {
+	font-size: 5rem;
+	border: none;
+}
+
+.error-page h2 {
+	margin-top: 0;
+}
+
+.error-page a {
+	display: inline-block;
+	margin-top: 1.5rem;
+	padding: 0.75rem 1.5rem;
+	background-color: var(--link-color);
+	color: var(--bg-color);
+	border-radius: 4px;
+	text-decoration: none;
+}
+
+.error-page a:hover {
+	background-color: #4a90e2;
+	text-decoration: none;
+}
+
+/* Footer copyright */
+.copyright {
+	text-align: center;
+	font-size: 0.85rem;
+	opacity: 0.7;
+	margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+	h1 {
+		font-size: 1.8rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.3rem;
+	}
+
+	header,
+	footer {
+		padding: 1rem;
+	}
+
+	main {
+		padding: 0 1rem;
+		margin: 1rem auto;
+	}
+}
+
+/* Code highlighting overrides */
+pre code.hljs {
+	padding: 0.2em 0.5em !important;
+}

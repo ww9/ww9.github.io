@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://brunocassol.com/sitemap.xml
